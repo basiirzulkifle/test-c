@@ -13,11 +13,15 @@ class StaffController extends Controller
         $staff = new User;
         $staff->name = $request->name;
         $staff->email = $request->email;
-        $staff->mobile_no = $request->mobile_no;
+        $staff->password = $request->mobile_no;
+        $staff->roles = $request->user_id;
+        $staff->photo = $request->base64_text;
+        $staff->base64 = $request->base64_text;
         $staff->user_id = $request->user_id;
-        $staff->base64_text = $request->base64_text;
         $staff->save();
         return response()->json(['message' => 'Staff register succesfully']);
+
+
 
     }
 }

@@ -75,6 +75,8 @@ class RegisterController extends Controller
             'approved' => 0,
         ]);
 
+        // $user->roles()->sync(2);
+
         $user->addMedia(storage_path('tmp/uploads/' . basename($data['photo'])))->toMediaCollection('photo');
 
         return $user;
